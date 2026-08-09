@@ -17,7 +17,7 @@ CREATE INDEX idx_ag_usuario_inicio_fim
 	
 
 CREATE OR REPLACE FUNCTION set_atualizado_em()
-RETURN TRIGGER AS $$
+RETURNS TRIGGER AS $$
 BEGIN
 	NEW.atualizado_em := NOW();
 	RETURN NEW;

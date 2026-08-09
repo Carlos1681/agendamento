@@ -1,5 +1,7 @@
 package dev.spjch.agendamento.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -32,10 +34,10 @@ public class Agendamento {
 	private String descricao;
 
 	@Column(name = "data_inicio", nullable = false)
-	private String dataInicio;
+	private LocalDateTime dataInicio;
 
 	@Column(name = "data_fim", nullable = false)
-	private String dataFim;
+	private LocalDateTime dataFim;
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length = 20)
@@ -45,8 +47,8 @@ public class Agendamento {
 	private String usuario;
 
 	@Column(name = "criado_em", nullable = false)
-	private String criadoEm;
+	private LocalDateTime criadoEm;
 
 	@Column(name = "atualizado_em", nullable = false)
-	private String atualizadoEm;
+	private LocalDateTime atualizadoEm;
 }
