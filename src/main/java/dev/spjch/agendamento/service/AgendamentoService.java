@@ -3,6 +3,7 @@ package dev.spjch.agendamento.service;
 import java.time.LocalDateTime;
 
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 import dev.spjch.agendamento.dto.AgendamentoCreateRequest;
 import dev.spjch.agendamento.dto.AgendamentoResponse;
@@ -16,6 +17,7 @@ import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
 @Service
+@Validated
 public class AgendamentoService {
 
 	private final AgendamentoRepository agendamentoRepository;
@@ -36,7 +38,7 @@ public class AgendamentoService {
 	}
 
 	@Transactional
-	public AgendamentoResponse atulizar(Long id, @Valid AgendamentoUpdateRequest request) {
+	public AgendamentoResponse atualizar(Long id, @Valid AgendamentoUpdateRequest request) {
 
 		Agendamento entity = agendamentoRepository.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("Agendamento não encontrado com o ID: " + id));
