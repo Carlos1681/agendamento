@@ -33,8 +33,8 @@ public class AgendamentoMapper {
 		}
 	}
 
-	public static AgendamentoResponse(Agendamento agendamento) {
-		
+	public static AgendamentoResponse toResponse(Agendamento agendamento) {
+
 		return new AgendamentoResponse(agendamento.getId(), agendamento.getTitulo(), agendamento.getDescricao(),
 				agendamento.getDataInicio(), agendamento.getDataFim(), agendamento.getStatus(),
 				agendamento.getUsuario(), agendamento.getCriadoEm(), agendamento.getAtualizadoEm());
