@@ -1,5 +1,5 @@
 CREATE TABLE tb_agendamento(
-	id SERIAL PRIMARY_KEY,
+	id BIGSERIAL PRIMARY KEY,
 	titulo VARCHAR(120) NOT NULL,
 	descricao TEXT,
 	data_inicio TIMESTAMP NOT NULL,
